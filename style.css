@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
@@ -10,7 +14,8 @@ h1 {
 
 .container {
   background: white;
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   margin: 20px auto;
   padding: 15px;
   border-radius: 8px;
@@ -51,8 +56,31 @@ ul {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
   .container {
-    width: 350px;
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
   }
 }
