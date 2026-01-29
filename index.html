@@ -2,25 +2,37 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JadwalKu</title>
     <link rel="stylesheet" href="style.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <h1>📅 JadwalKu</h1>
+    <div class="app">
+      <div class="header">
+        <h1>JadwalKu</h1>
+        <p>Atur jadwal kegiatanmu dengan rapi dan mudah</p>
+      </div>
 
-    <div class="container">
-      <h2>Tambah Jadwal</h2>
-      <input type="text" id="nama" placeholder="Nama Kegiatan" />
-      <input type="date" id="tanggal" />
-      <input type="time" id="waktu" />
-      <button onclick="tambahJadwal()">Tambah</button>
-    </div>
+      <div class="content">
+        <label>Nama Kegiatan</label>
+        <input type="text" id="nama" placeholder="Contoh: Belajar Matematika" />
 
-    <div class="container">
-      <h2>Daftar Jadwal</h2>
-      <ul id="listJadwal"></ul>
+        <div class="row">
+          <div>
+            <label>Tanggal</label>
+            <input type="date" id="tanggal" />
+          </div>
+          <div>
+            <label>Waktu</label>
+            <input type="time" id="waktu" />
+          </div>
+        </div>
+
+        <button id="tambah">Tambah Jadwal</button>
+
+        <h3>Daftar Jadwal</h3>
+        <div id="list"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>

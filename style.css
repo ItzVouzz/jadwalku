@@ -1,86 +1,103 @@
 * {
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a7cff, #8b5cf6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  background: linear-gradient(135deg, #6a7cff, #8b5cf6);
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-h1 {
-  color: #2c3e50;
+.content {
+  padding: 20px;
 }
 
-.container {
-  background: white;
-  max-width: 750px;
-  width: 100%;
-  margin: 20px auto;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+label {
+  font-size: 13px;
+  font-weight: 600;
 }
 
 input {
-  width: 90%;
-  padding: 8px;
-  margin: 5px 0;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row div {
+  flex: 1;
 }
 
 button {
-  padding: 8px 12px;
-  background: #3498db;
+  width: 100%;
+  padding: 12px;
+  background: #6a7cff;
   color: white;
   border: none;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2980b9;
+  background: #5a6af0;
 }
 
-li {
-  list-style: none;
-  margin: 8px 0;
-  padding: 15px;
-  background: #ecf0f1;
-  border-radius: 5px;
-}
-
-ul {
-  padding: 0 1em;
-}
-
-#listJadwal button {
+.jadwal {
+  background: #f8f9ff;
+  border-radius: 10px;
+  padding: 12px;
   margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 22px;
-    text-align: center;
-  }
+.jadwal h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
 
-  .container {
-    max-width: 400px;
-    padding: 15px;
-  }
+.jadwal p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: #555;
+}
 
-  ul {
-    padding: 0;
-  }
+.hapus {
+  margin-top: 6px;
+  background: #ff5b5b;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
 
-  li {
-    list-style: none;
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #f4f4f4;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
+@media (max-width: 480px) {
+  .app {
+    max-width: 360px;
   }
 }

@@ -1,45 +1,52 @@
-let jadwal = JSON.parse(localStorage.getItem("jadwal")) || [];
+const nama = document.getElementById("nama");
+const tanggal = document.getElementById("tanggal");
+const waktu = document.getElementById("waktu");
+const list = document.getElementById("list");
+const tombol = document.getElementById("tambah");
 
-function tampilkanJadwal() {
-  let list = document.getElementById("listJadwal");
-  list.innerHTML = "";
+let data = JSON.parse(localStorage.getItem("jadwal")) || [];
 
-  jadwal.forEach((item, index) => {
-    let li = document.createElement("li");
-    li.innerHTML = `
-            <strong>${item.nama}</strong><br>
-            ${item.tanggal} - ${item.waktu}
-            <br>
-            <button onclick="hapusJadwal(${index})">Hapus</button>
-        `;
-    list.appendChild(li);
-  });
-}
-
-function tambahJadwal() {
-  let nama = document.getElementById("nama").value;
-  let tanggal = document.getElementById("tanggal").value;
-  let waktu = document.getElementById("waktu").value;
-
-  if (nama === "" || tanggal === "" || waktu === "") {
-    alert("Semua data harus diisi!");
+tombol.onclick = () => {
+  if (!nama.value || !tanggal.value || !waktu.value) {
+    alert("Lengkapi semua data!");
     return;
   }
 
-  jadwal.push({ nama, tanggal, waktu });
-  localStorage.setItem("jadwal", JSON.stringify(jadwal));
+  data.push({
+    nama: nama.value,
+    tanggal: tanggal.value,
+    waktu: waktu.value,
+  });
 
-  document.getElementById("nama").value = "";
-  document.getElementById("tanggal").value = "";
-  document.getElementById("waktu").value = "";
+  localStorage.setItem("jadwal", JSON.stringify(data));
+  nama.value = "";
+  tanggal.value = "";
+  waktu.value = "";
+  render();
+};
 
-  tampilkanJadwal();
+function render() {
+  list.innerHTML = "";
+
+  data.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "jadwal";
+
+    div.innerHTML = `
+      <h4>${item.nama}</h4>
+      <p>📅 ${item.tanggal}</p>
+      <p>⏰ ${item.waktu}</p>
+      <button class="hapus" onclick="hapus(${index})">Hapus</button>
+    `;
+
+    list.appendChild(div);
+  });
 }
 
-function hapusJadwal(index) {
-  jadwal.splice(index, 1);
-  localStorage.setItem("jadwal", JSON.stringify(jadwal));
-  tampilkanJadwal();
+function hapus(i) {
+  data.splice(i, 1);
+  localStorage.setItem("jadwal", JSON.stringify(data));
+  render();
 }
 
-tampilkanJadwal();
+render();
