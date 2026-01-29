@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JadwalKu</title>
     <link rel="stylesheet" href="style.css" />
-
-    <meta name="theme-color" content="#6f7be6" />
-    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <div class="app">
@@ -39,13 +36,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("./service-worker.js")
-          .then(() => console.log("Service Worker aktif"))
-          .catch((err) => console.log("SW gagal:", err));
-      }
-    </script>
   </body>
 </html>
