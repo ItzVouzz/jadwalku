@@ -4,6 +4,7 @@
   "description": "Aplikasi pengelola jadwal kegiatan harian",
   "start_url": "./index.html",
   "display": "standalone",
+  "scope": "./",
   "background_color": "#6f7be6",
   "theme_color": "#6f7be6",
   "orientation": "portrait",
